@@ -1,0 +1,106 @@
+body {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 40%;
+    font-family: Arial, Helvetica;
+}
+
+.small_font{
+    font-size: 10px;
+}
+
+.medium_font {
+    font-size: 14px;
+}
+
+.large_font {
+    font-size: 17px;
+}
+
+.table_right {
+    text-align: right;
+    font-size: 13px;
+}
+
+.font_TMR {
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+div#heading1 {
+    text-align: center;
+    font-size: 12px;
+}
+
+div#heading2 {
+    text-align: right;
+    font-size: 12px;
+}
+
+div#heading3 {
+    text-align: left;
+    font-size: 12px;
+}
+
+div#all_links {
+    padding-top: 20px;
+}
+
+div#content1 {
+    padding-top: 10px;
+    padding-left: 10px;
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+table#table1_2 {
+    padding-left: 5px;
+}
+
+.th_left {
+    text-align: left;
+}
+
+.bold_link {
+    font-weight: bold;
+}
+
+form {
+    text-align: center;
+}
+
+div .content28 {
+    text-align: center;
+    font-size: 10px;
+}
+
+table#table2 {
+    text-align: center;
+}
+
+div .content345 {
+    padding-top: 10px;
+    padding-left: 10px;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 10px;
+}
+
+div .content67 {
+    padding-left: 10px;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 10px;
+    text-align: center;
+}
+
+div#advertisements {
+    font-size:10px;
+    padding-left: 5px;
+}
