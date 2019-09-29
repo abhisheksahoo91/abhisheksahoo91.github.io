@@ -1,9 +1,17 @@
 body {
-    padding-top: 50px;
+    padding-top: 10px;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     width: 40%;
     font-family: Arial, Helvetica;
+}
+
+div#original_link {
+    padding-bottom: 50px;
+    grid-column: 1 / 4;
+    text-align: center;
+    font-family: monospace;
+    font-size: 15px;
 }
 
 .small_font{
