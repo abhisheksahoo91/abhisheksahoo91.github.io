@@ -8,7 +8,7 @@ body {
 
 div#original_link {
     padding-bottom: 50px;
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
     text-align: center;
     font-family: monospace;
     font-size: 15px;
