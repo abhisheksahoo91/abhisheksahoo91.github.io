@@ -14,6 +14,10 @@ div#original_link {
     font-size: 15px;
 }
 
+a {
+    color: black;
+}
+
 .small_font{
     font-size: 10px;
 }
