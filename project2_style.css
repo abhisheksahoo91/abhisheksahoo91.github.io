@@ -14,6 +14,26 @@ div#original_link {
     font-size: 15px;
 }
 
+.orig_link {
+    position: relative;
+}
+
+.link-content {
+    position: absolute;
+    display: none;
+}
+
+.orig_link:hover .link-content {
+    display: block;
+}
+
+.link-content {
+    background-color: gray;
+    z-index: 1;
+    padding: 5px;
+
+}
+
 a {
     color: black;
 }
@@ -63,14 +83,12 @@ div#all_links {
 
 div#content1 {
     padding-top: 10px;
-    # padding-left: 5px;
     grid-column: 1 / 3;
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
 table#table1_2 {
-    # padding-left: 5px;
 }
 
 .th_left {
@@ -85,6 +103,10 @@ form {
     text-align: center;
 }
 
+select#dropdown {
+
+}
+
 div .content28 {
     text-align: center;
     font-size: 10px;
@@ -96,15 +118,13 @@ table#table2 {
 
 div .content345 {
     padding-top: 10px;
-    # padding-left: 5px;
     grid-column: 1 / 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: 10px;
 }
 
-div .content67 {
-    # padding-left: 5px;
+div .content67 {]
     grid-column: 1 / 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -113,6 +133,17 @@ div .content67 {
 }
 
 div#advertisements {
+    padding-left: 5px;
     font-size:10px;
-    # padding-left: 5px;
+}
+
+div#main_content {
+    padding-left: 10px;
+}
+
+footer {
+    padding-top: 40px;
+    grid-column: 1 / 4;
+    text-align: center;
+    font-size: 10px;
 }
