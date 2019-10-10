@@ -1,258 +1,34 @@
 ﻿<html>
 <head>
-    <link rel="stylesheet" href="project2_style.css">
+    <link rel="stylesheet" href="project3_style.css">
 </head>
 <body>
+    <header>Password Generator</header>
 
-    <div id="original_link">
-        <div class="orig_link">
-            Please <a href="https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/home/today/">click on this link</a> to go to the original website I am modeling.
-            <div class="link-content">https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/home/today/</div>
-        </div>
-    </div>
+    <div id="user_space">
+        <label for="min_word_len" class="right_align">Minimum Word Length</label>
+        <input type="text" id="min_word_len" class="left_align" onchange="checkNumber(this);" />
+        <label for="max_word_len" class="right_align">Maximum Word Length</label>
+        <input type="text" id="max_word_len" class="left_align" onchange="checkNumber(this);" />
+        <label for="max_pass_len" class="right_align">Maximum Password Length</label>
+        <input type="text" id="max_pass_len" class="left_align" onchange="checkNumber(this);" />
 
-    <div id="heading1">
-        FRIDAY
-        <br>3rd July 1998
-        <br /><img src="project1/image/BBC_Logo.gif" alt="BBC Logo" style="text-align:center">
-    </div>
-
-    <div id="heading2">
-        <img src="project1/image/BBC_Online.gif" alt="BBC Online">
-    </div>
-
-    <div id="heading3">
-        <img src="project1/image/Interview.gif" alt="Interview">
-    </div>
-
-    <div id="all_links">
-        <table class="table_right">
-            <tr><th>Online</th></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/home/today/">BBC Homepage</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/home/today/">BBC Site Map</a></td></tr>
-
-            <tr><th>Main Sites</th></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">News</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">World Cup 98</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">Weather</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">World Service</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">Education</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">beeb @ the BBC</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">BBC Worldwide</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19981201052808/http://www.news.bbc.co.uk/">BBC Across The UK</a></td></tr>
-
-            <tr><th>Services</th></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071206/http://www0.bbc.co.uk/webguide/index.shtml">Web Guide</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071206/http://www0.bbc.co.uk/webguide/index.shtml">TV Listings</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071206/http://www0.bbc.co.uk/webguide/index.shtml">Radio Listings</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071206/http://www0.bbc.co.uk/webguide/index.shtml">Online Channel</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071206/http://www0.bbc.co.uk/webguide/index.shtml">Feedback</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071206/http://www0.bbc.co.uk/webguide/index.shtml">Search</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071206/http://www0.bbc.co.uk/webguide/index.shtml">Help</a></td></tr>
-
-            <tr><th>Inside the BBC</th></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071051/http://www0.bbc.co.uk/jobs/">Jobs at the BBC</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071051/http://www0.bbc.co.uk/jobs/">The BBC and You</a></td></tr>
-            <tr><td><a href="https://web.archive.org/web/19980703071051/http://www0.bbc.co.uk/jobs/">Copyright</a></td></tr>
-        </table>
-    </div>
-
-    <div id="main_content">
-        <img src="project1/image/ticker.gif" alt="BBC Online">
-        <br /><a class="font_TMR" href="https://web.archive.org/web/19980703071131/http://www0.bbc.co.uk/help/newcomers.shtml">TODAY ON THE WEB</a>
-
-        <div id="content1">
-            <img src="project1/image/Webguide.gif" alt="Webguide" />
-            <table id="table1_2" class="small_font">
-                <tr><th class="th_left medium_font">Web Guide</th></tr>
-                <tr><td>The essential guide to the Web now has Celebrity Choice, in which BBC presenters choose their favourite websites from around the world. Really Wild Show presenter Howie Watkins, for instance, directs you to Parliament.</td></tr>
-                <tr><td><a href="#">Visit the <b>Web Guide </b>website</a></td></tr>
-                <tr><td>Today's other recommended sites:<br /><a class="bold_link" href="#">World Cup 98</a><br />Cool analysis as the pace hots up.<br /><a class="bold_link" href="#">One Planet</a><br />Scientific and political debate on worldwide issues.</td></tr>
-            </table>
-        </div>
-
-        <form>
-            <select id="dropdown">
-                <option value="1">A selection of top BBC sites</option>
-                <option value="1">Animal Zone</option>
-            </select>
-            <input type="submit" value="Go">
+        <!--<form class="left_align right_sec">
+            <input id="easy_type" type="checkbox" value="">Easy Typing
+        </form>-->
+        <form class="left_align right_sec">
+            <input id="num_sub" type="checkbox">Number Substitution
         </form>
-
-        <a class="font_TMR large_font" href="#">CHOICES</a>
-
-        <div class="content28">
-            <p class="medium_font"><b>Around the BBC sites</b></p>
-            <p>
-                <br /><a href="#" class="bold_link">The BBC and You</a> - Find out more about your BBC.
-                <br /><a href="#" class="bold_link">World Famous Faces</a> - Celebrities speak about the BBC.
-                <br /><a href="#" class="bold_link">Pick of the Week</a> - The week's top radio broadcasts.
-            </p>
-        </div>
-
-        <div class="content345">
-            <p>
-                <a href="#">World Cup French</a><br />Learn French for "la Coupe du Monde".
-                <br /><a href="#">The Osprey Nest</a><br />Watch the birdies with Animalzone.
-                <br /><a href="#">Westway.</a><br />Catch up on this twice-weekly serial.
-            </p>
-
-            <p>
-                <a href="#">Radio 3</a><br />Identify the music and you could win Proms tickets.
-                <br /><a href="#">France 98 Competition</a><br />You could win a host of World Cup goodies
-                <br /><a href="#">The Learning Curve Quiz</a><br />Remember no dictionaries or calculators allowed!</td></tr>
-            </p>
-        </div>
-
-        <div class="content345">
-            <img src="project1/image/Jacket.gif" alt="Quiz" />
-            <img src="project1/image/BBC_Digital.gif" alt="Quiz" />
-        </div>
-
-        <br /><a class="font_TMR" href="#"><b>SERVICES</b></a>
-
-        <div class="content345">
-            <p>
-                <a href="https://web.archive.org/web/19980703081440/http://www0.bbc.co.uk/education/worldcup/">BBC Ticker</a>
-                <br />Have the latest headlines running on your screen while you work, play or browse.
-                <br /><a href="https://web.archive.org/web/19980703081440/http://www0.bbc.co.uk/education/worldcup/">BBC Online Channel</a>
-                <br />The very latest news, weather, sport, finance, travel and leisure for IE4 or Netscape 4.
-                <br /><a href="https://web.archive.org/web/19980703081440/http://www0.bbc.co.uk/education/worldcup/">Webwise</a>
-                <br />Netbasics and netknowhow from BBC Education.
-                <br /><a href="https://web.archive.org/web/19980703081440/http://www0.bbc.co.uk/education/worldcup/">BBC Tickets</a>
-                <br />See BBC shows live, for free
-            </p>
-
-            <div>
-                <p>
-                    <a href="https://web.archive.org/web/19990218074028/http://www.bbc.co.uk/radio3/competition/index.shtml"><b>Web Guide</b></a>
-                    <br />BBC reviewers select the best websites from around the world. Check out today's features and choices.
-                    <ul>
-                        <li>
-                            <a href="https://web.archive.org/web/19990218074028/http://www.bbc.co.uk/radio3/competition/index.shtml">LeisureHunt</a>
-                        </li>
-                        <li>
-                            <a href="https://web.archive.org/web/19990218074028/http://www.bbc.co.uk/radio3/competition/index.shtml">Camels and Chocolate<br />Cricket Chip Cookies</br></a>
-                        </li>
-                        <li>
-                            <a href="https://web.archive.org/web/19990218074028/http://www.bbc.co.uk/radio3/competition/index.shtml">What's new on the Web</a>
-                        </li>
-                        <li>
-                            <a href="https://web.archive.org/web/19990218074028/http://www.bbc.co.uk/radio3/competition/index.shtml">Your Choice</a>
-                        </li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-
-        <br /><a class="font_TMR" href="#"><b>TELEVESION & RADIO</b></a>
-
-        <div class="content67">
-            <p class="medium_font font_TMR">ON NOW</p>
-            <p class="medium_font font_TMR">ON NOW</p>
-            <p>
-                <b>BBC1</b><br />BBC Breakfast News<br /><b>BBC2</b><br />Get Your Own Back
-            </p>
-            <p>
-                <b>RADIO 1</b> Kevin Greening and Zoe Ball
-                <br /><b>RADIO 2</b> Wake Up to Wogan
-                <br /><b>RADIO 3</b> On Air
-                <br /><b>RADIO 4</b> Today
-                <br /><b>RADIO 5 LIVE</b> The Breakfast<br />Programme
-            </p>
-        </div>
-
-        <div class="content67">
-            <p class="medium_font font_TMR">HIGHLIGHTS</p>
-            <p class="medium_font font_TMR">HIGHLIGHTS</p>
-            <p>
-                <a href="https://web.archive.org/web/19980703071243/http://www0.bbc.co.uk/home/today/highlights/tv/index.shtml#1"><b>Meet The Challenge</b></a>
-                <br /><a href="https://web.archive.org/web/19980703071243/http://www0.bbc.co.uk/home/today/highlights/tv/index.shtml#1" style="font-size:10px; "><b>Cricket: The Third Test</b></a>
-                <br /><a href="https://web.archive.org/web/19980703071243/http://www0.bbc.co.uk/home/today/highlights/tv/index.shtml#1" style="font-size:10px; "><b>Around The World In 80 Days</b></a>
-            </p>
-            <p>
-                <a class="small_font" href="https://web.archive.org/web/19980703071243/http://www0.bbc.co.uk/home/today/highlights/tv/index.shtml#1"><b>Artist Of The Week</b></a>
-                <br /><a class="small_font" href="https://web.archive.org/web/19980703071243/http://www0.bbc.co.uk/home/today/highlights/tv/index.shtml#1"><b>The NHS AT 50 - Health For A Nation</b></a>
-                <br /><a class="small_font" href="https://web.archive.org/web/19980703071243/http://www0.bbc.co.uk/home/today/highlights/tv/index.shtml#1"><b>Love, Pray And Do The Dishes</b></a>
-            </p>
-        </div>
-
+        <form class="left_align right_sec">
+            <input id="cap_beg" type="checkbox">Capitalize first letters
+        </form>
     </div>
 
-    <div id="advertisements">
-        We've put your questions to
-        <a href="https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/home/interview/">Carol Smillie</a>, now read the
-        interview and email us any questions you have for
-        <a href="https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/home/interview/forms/bob_monkhouse.shtml">Bob Monkhouse</a> or
-        <a href="https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/home/interview/forms/bob_monkhouse.shtml">Kirsty Wark</a>.
-        <a class="font_TMR medium_font" href="#">MAIN SITES</a>
-        <img src="project1/image/news.gif" alt="News" />
-        <p>
-            <a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Drumcree: the talking goes<br />on</a>
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Worry over safety of some<br />transplants</a>
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Mir's days numbered</a>
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">New talks to break Drumcree<br />deadlock</a>
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Clinton's farewell plea for<br />democracy</a>
-        </p>
+    <button type="button" onclick="generateWords(this);">Generate</button>
+    <table id="table_password" align="center">
 
-        <br />
-        <img src="project1/image/sport.gif" alt="Sports" />
-        <p>
-            <a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Henman ready for Sampras<br />showdown</a>
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">England morale 'still high'</a>
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Hingis falls to Novotna</a>
-        </p>
-
-        <img src="project1/image/education.gif" alt="Education" />
-        <p>
-            <a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Windrush</a>
-            <br />Celebrate the African - sCaribbean contribution to Britain over the past fifty years.
-        </p>
-
-        <br />
-        <img src="project1/image/worldserv.gif" alt="Worldserv" />
-        <p>
-            <a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Newstalk</a>
-            <br />Kosovo - should the World intervene?
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">How to tune in.</a>
-        </p>
-
-        <br />
-        <img src="project1/image/beeb.gif" alt="Beeb" />
-        <p>
-            <a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Where the Wild Things are</a>
-            <br />Travel to Kenya with Take Off!
-        </p>
-
-        <p class="font_TMR medium_font">
-            <a href="https://web.archive.org/web/19980703070859/http://www.bbc.co.uk/help/">HELP</a>
-        </p>
-
-        <br />
-        <img src="project1/image/newcomers.gif" alt="Newcomers" />
-        <p>
-            New to the BBC homepage?
-            <br /><a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Let us show you around in.</a>
-        </p>
-
-        <br />
-        <img src="project1/image/homepage.gif" alt="Homepage" />
-        <p>
-            Make the BBC my homepage?
-            <a href="https://web.archive.org/web/19980703070859/http://news.bbc.co.uk/hi/english/events/northern_ireland/latest_news/newsid_125000/125280.stm">Here's how.</a>
-        </p>
-    </div>
-
-    <footer>
-        <a class="font_TMR large_font" href="#">BBC UPDATE</a>
-        <div class="content28">
-            <a class="small_font" href="https://web.archive.org/web/19980703071257/http://www0.bbc.co.uk/home/today/update/index.shtml">Bob Markhouse: Over The Limit</a>
-            <br /><a class="small_font" href="https://web.archive.org/web/19980703071257/http://www0.bbc.co.uk/home/today/update/index.shtml">Gardeners' Question Time goes back to nature - literally</a>
-            <br /><a class="small_font" href="https://web.archive.org/web/19980703071257/http://www0.bbc.co.uk/home/today/update/index.shtml">World Service scoops awards</a>
-            <br /><br /><img src="project1/image/bbc_white.gif" alt="BBC White">
-            <br />&copy; MCMXCVIII
-        </div>
-    </footer>
+    </table>
+    <script type="text/javascript" src="project3_script.js"></script>
 </body>
-</html>
 
+</html>

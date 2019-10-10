@@ -1,0 +1,50 @@
+body {
+    font-family: monospace;
+    text-align: center;
+}
+
+header {
+    margin: 20px;
+    font-size: 25px;
+}
+
+div#user_space {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left_align {
+    text-align: left;
+    margin: 5px;
+    width: 35%;
+}
+
+.right_align {
+    text-align: right;
+    margin: 5px;
+}
+
+.right_sec {
+    grid-column: 2 / 2;
+}
+
+button {
+    margin: 10px;
+    font-family: monospace;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    // font-size: 15px;
+    // font-family: Arial;
+}
+
+.dark_gray {
+    background-color: darkgray;
+}
+
+.light_gray {
+    background-color: lightgray;
+}
