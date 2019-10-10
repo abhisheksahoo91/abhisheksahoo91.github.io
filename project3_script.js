@@ -15,7 +15,9 @@ function generateWords(event) {
     var minWordLen = document.getElementById("min_word_len").value;
     var maxWordLen = document.getElementById("max_word_len").value;
     var maxPassLen = document.getElementById("max_pass_len").value;
-    // alert(minWordLen + ' ' + maxWordLen + ' ' + maxPassLen);
+    if (minWordLen.length == 0 || maxWordLen.length == 0 || maxPassLen.length == 0|| isNaN(minWordLen) || isNaN(maxWordLen) || isNaN(maxPassLen)) {
+        alert('The input values are not correctly filled. Please check again');
+    }
 
     // Then get condition variables to make the app fancy.
     var numSub = document.getElementById("num_sub").checked;

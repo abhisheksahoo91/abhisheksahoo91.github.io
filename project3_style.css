@@ -37,8 +37,7 @@ button {
 table, th, td {
     border: 1px solid black;
     text-align: center;
-    // font-size: 15px;
-    // font-family: Arial;
+    font-size: 15px;
 }
 
 .dark_gray {
