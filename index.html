@@ -1,34 +1,15 @@
 ﻿<html>
 <head>
-    <link rel="stylesheet" href="project3_style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>Password Generator</header>
+    <header>Display Concert</header>
 
-    <div id="user_space">
-        <label for="min_word_len" class="right_align">Minimum Word Length</label>
-        <input type="text" id="min_word_len" class="left_align" onchange="checkNumber(this);" />
-        <label for="max_word_len" class="right_align">Maximum Word Length</label>
-        <input type="text" id="max_word_len" class="left_align" onchange="checkNumber(this);" />
-        <label for="max_pass_len" class="right_align">Maximum Password Length</label>
-        <input type="text" id="max_pass_len" class="left_align" onchange="checkNumber(this);" />
-
-        <!--<form class="left_align right_sec">
-            <input id="easy_type" type="checkbox" value="">Easy Typing
-        </form>-->
-        <form class="left_align right_sec">
-            <input id="num_sub" type="checkbox">Number Substitution
-        </form>
-        <form class="left_align right_sec">
-            <input id="cap_beg" type="checkbox">Capitalize first letters
-        </form>
-    </div>
-
-    <button type="button" onclick="generateWords(this);">Generate</button>
+    <button type="button">Generate</button>
     <table id="table_password" align="center">
 
     </table>
-    <script type="text/javascript" src="project3_script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

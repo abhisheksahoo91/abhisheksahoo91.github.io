@@ -47,3 +47,22 @@ table, th, td {
 .light_gray {
     background-color: lightgray;
 }
+
+div#num_sub_hover {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+div#cap_beg_hover {
+    position: absolute;
+    display: none;
+}
+
+num_sub:hover {
+    background-color: #ddd;
+}
+
+num_sub:hover num_sub_hover {
+    display: block;
+}
