@@ -1,6 +1,8 @@
 body {
     font-family: monospace;
     text-align: center;
+    background-color: lightblue;
+    padding-bottom: 250px;
 }
 
 header {
@@ -12,6 +14,20 @@ div#user_space {
     padding-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+div#concert_group {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.concert {
+    border: 1px solid black;
+    background-color: lightgreen;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 10px;
 }
 
 .left_align {
@@ -48,21 +64,9 @@ table, th, td {
     background-color: lightgray;
 }
 
-div#num_sub_hover {
-    position: absolute;
-    display: none;
-    z-index: 1;
-}
-
-div#cap_beg_hover {
-    position: absolute;
-    display: none;
-}
-
-num_sub:hover {
-    background-color: #ddd;
-}
-
-num_sub:hover num_sub_hover {
-    display: block;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
