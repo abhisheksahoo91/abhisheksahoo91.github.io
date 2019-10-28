@@ -12,12 +12,12 @@ async function playSongsByLocation() {
             //console.log(concertData);
             if (concertData != null) {
                 var eventData = concertData._embedded.events;
-                eventData.sort((a, b) => (a.dates.start.localDate > b.dates.start.localDate) ? 1 : -1)
+                localStorage.setItem('concert_event', JSON.stringify(eventData));
 
                 // First we will display the events in the website
+                document.getElementById('player').style.display = "block";
+                // DZ.player.play();
                 displayConcert(eventData);
-
-                
             } else {
                 console.log('No concert in this location');
                 alert('No concert in this location');
@@ -61,76 +61,117 @@ async function getConcert(geoPoint) {
 }
 
 function displayConcert(eventData) {
-    // console.log(eventData)
-    var parentDiv = document.getElementById('concert_group');
+
+    // Sort the events
+    var sortParam = document.getElementById('sort_parameter').value.toLowerCase();
+    if (sortParam == 'date') {
+        eventData.sort((a, b) => (a.dates.start.localDate > b.dates.start.localDate) ? 1 : -1);
+    } else {
+        eventData.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
+    }
+
+    console.log(eventData)
+    var parentDiv = document.getElementById('concert_list');
     parentDiv.innerHTML = '';
 
     for (var i = 0; i < eventData.length; i++) {
         var iEvent = eventData[i];
         var childDiv = document.createElement('div');
-        childDiv.id = i;
+        childDiv.id = 'concert_' + i;
         childDiv.classList.add('concert');
+        localStorage.setItem(childDiv.id, JSON.stringify(iEvent));
         childDiv.onclick = function () {
-            var selectedArtistName = getSelectedText();
-            alert('Selected artist : ' + selectedArtistName);
-            var maxSize = 10;
+            var maxSize = 5;
+            var selectedConcert = JSON.parse(localStorage.getItem(this.id));
+            var selectedArtistName = displaySelectedConcert(selectedConcert);
             playSongsBasedOnArtistName(selectedArtistName, maxSize);
         }
 
-        var concertTable = document.createElement('table');
-        var concertRow1 = document.createElement('tr');
-        var td1 = document.createElement('td'); td1.innerHTML = 'Artist Name';
-        var td2 = document.createElement('td'); td2.innerHTML = iEvent.name;
-        //var td3 = document.createElement('td');
-        var artistNameModBox = document.createElement('input'); artistNameModBox.type = 'text'; artistNameModBox.value = iEvent.name;
-        concertRow1.appendChild(td1);
-        concertRow1.appendChild(td2);
-        //td3.appendChild(artistNameModBox[i]);
-        //concertRow1.appendChild(td3);
-        concertTable.appendChild(concertRow1);
+        var divDate = document.createElement('div');
+        divDate.innerHTML = iEvent.dates.start.localDate;
+        divDate.classList.add('concert_date');
+        var divName = document.createElement('div');
+        divName.innerHTML = iEvent.name;
+        divName.classList.add('concert_name');
+        var divTime = document.createElement('div');
+        divTime.innerHTML = iEvent.dates.start.localTime;
+        divTime.classList.add('concert_time');
+        var divVenue = document.createElement('div');
+        divVenue.innerHTML = iEvent._embedded.venues[0].address.line1 + ', ' + iEvent._embedded.venues[0].city.name + ', '
+            + iEvent._embedded.venues[0].state.stateCode + ', ' + iEvent._embedded.venues[0].postalCode;
+        divVenue.classList.add('concert_venue');
 
-        var concertRow2 = document.createElement('tr');
-        var td1 = document.createElement('td'); td1.innerHTML = 'Date';
-        var td2 = document.createElement('td'); td2.innerHTML = iEvent.dates.start.localDate + ' - ' + iEvent.dates.start.localTime;
-        //var td3 = document.createElement('td'); td3.innerHTML = iEvent.dates.start.localTime;
-        concertRow2.appendChild(td1);
-        concertRow2.appendChild(td2);
-        //concertRow2.appendChild(td3);
-        concertTable.appendChild(concertRow2);
+        childDiv.appendChild(divDate);
+        childDiv.appendChild(divName);
+        childDiv.appendChild(divTime);
+        childDiv.appendChild(divVenue);
 
-        var concertRow3 = document.createElement('tr');
-        var td1 = document.createElement('td'); td1.innerHTML = 'Distance';
-        var td2 = document.createElement('td'); td2.innerHTML = iEvent.distance;
-        concertRow3.appendChild(td1);
-        concertRow3.appendChild(td2);
-        /*var td3 = document.createElement('td');
-        var playSongButton = document.createElement('input'); playSongButton.type = 'button'; playSongButton.value = 'Play';
-        playSongButton.onclick = function () {
-            alert(artistNameModBox[i]);
-            playSongsForConcert(artistNameModBox[i].value);
-            // playSongsBasedOnArtistName(artistName, maxSize);
-        }
-        td3.appendChild(playSongButton);
-        concertRow3.appendChild(td3);*/
-        
-        concertTable.appendChild(concertRow3);
-
-        childDiv.appendChild(concertTable);
         parentDiv.appendChild(childDiv);
+        parentDiv.appendChild(document.createElement('hr'));
     }
+}
+
+function displaySelectedConcert(selectedConcert) {
+    var selectedConcertDiv = document.getElementById('concert_selected');
+    selectedConcertDiv.innerHTML = '';
+    var concertName = document.createElement('div');
+    concertName.classList.add('selected_concert_name');
+    concertName.innerHTML = selectedConcert.name;
+    selectedConcertDiv.appendChild(concertName);
+    selectedConcertDiv.appendChild(document.createElement('hr'));
+
+    var genreDiv = document.createElement('div');
+    genreDiv.classList.add('concert_selected_details');
+    var genreNameDiv = document.createElement('div');
+    genreNameDiv.innerHTML = 'Genre';
+    var genreValDiv = document.createElement('div');
+    genreValDiv.innerHTML = selectedConcert.classifications[0].genre.name;
+    genreDiv.appendChild(genreNameDiv);
+    genreDiv.appendChild(genreValDiv);
+    selectedConcertDiv.appendChild(genreDiv);
+
+    var artistDiv = document.createElement('div');
+    artistDiv.classList.add('concert_selected_details');
+    var artistNameDiv = document.createElement('div');
+    artistNameDiv.innerHTML = 'Artist(s)';
+    var artistValDiv = document.createElement('div');
+
+    var artistNameList = '';
+    var selectedArtistName = [];
+    if (selectedConcert.hasOwnProperty('_embedded') && selectedConcert._embedded.hasOwnProperty('attractions') && selectedConcert._embedded.attractions.length != 0 && selectedConcert._embedded.attractions[0].hasOwnProperty('name')) {
+        selectedArtistName = selectedConcert._embedded.attractions[0].name;
+        for (var i = 0; i < selectedConcert._embedded.attractions.length; i++) {
+            artistNameList = artistNameList + selectedConcert._embedded.attractions[i].name + '<br>';
+        }
+    } else {
+        selectedArtistName = selectedConcert.name;
+        artistNameList = selectedArtistName;
+    }
+    artistValDiv.innerHTML = artistNameList;
+    artistDiv.appendChild(artistNameDiv);
+    artistDiv.appendChild(artistValDiv);
+    selectedConcertDiv.appendChild(artistDiv);
+
+    if (selectedConcert.images.length != 0) {
+        var concertImage = document.createElement('img');
+        concertImage.classList.add('selected_concert_image');
+        var imageURL = selectedConcert.images[0].url;
+        concertImage.setAttribute('src', imageURL);
+        selectedConcertDiv.appendChild(concertImage);
+    }
+    
+    return selectedArtistName;
 }
 
 async function playSongsBasedOnArtistName(artistName, maxSize) {
     var songsList = [];
     let baseURL = "https://cors-anywhere.herokuapp.com/http://api.deezer.com/search?";
-    let queryURL = baseURL + '&q=artist:"' + artistName + '"&output=json';
+    let queryURL = baseURL + '&q=artist:"' + artistName + '"&order=RANKING&limit=' + maxSize + '&output=json';
     await fetch(queryURL).then(function (resp) {
         resp.json().then(function (myJson) {
             songsList = myJson.data;
             if (songsList.length != 0) {
-                //console.log(songsList)
-                //console.log(maxSize)
-                playSongsShuffled(songsList, maxSize);
+                playSongs(songsList);
             } else {
                 alert('No songs found for the artist : ' + artistName + '. Either the name of the artist is wrong or we do not have any records in our database.')
             }
@@ -156,6 +197,13 @@ function playSongs(songsList) {
     DZ.player.playTracks(idList);
 }
 
+function sortEvents(sortDropdown) {
+    console.log(sortDropdown.value);
+    var eventData = JSON.parse(localStorage.getItem('concert_event'));
+    displayConcert(eventData);
+}
+
+/*
 function myShuffle(myArray) {
     var arrayLen = myArray.length;
     var tempVar;
@@ -168,24 +216,10 @@ function myShuffle(myArray) {
         myArray[myRandInt] = tempVar;
     }
     return myArray;
-}
-
-function getSelectedText() {
-    var txt = '';
-    if (window.getSelection) {
-        txt = window.getSelection();
-    }
-    else if (document.getSelection) {
-        txt = document.getSelection();
-    }
-    else if (document.selection) {
-        txt = document.selection.createRange().text;
-    }
-    else return;
-    return txt;
-}
+}*/
 
 function myOnload() {
+    //document.body.scrollTop = document.documentElement.scrollTop = 0;
     function onPlayerLoaded() {
         // console.log('Player is loaded');
         var myFavTracks = [698905582, 744266592, 447098092, 710164312, 771196602];
