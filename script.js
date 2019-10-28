@@ -8,7 +8,6 @@ async function playSongsByLocation() {
             if (concertData != null) {
                 var eventData = concertData._embedded.events;
                 localStorage.setItem('concert_event', JSON.stringify(eventData));
-                document.getElementById('player').style.display = "block";
                 displayConcert(eventData);
             } else {
                 console.log('No concert in this location');
