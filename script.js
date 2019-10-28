@@ -16,7 +16,7 @@ async function playSongsByLocation() {
             }
         }).catch(function (err) {
             console.log(err);
-            alert('Error while retrieving the concert data : ' + err);
+            alert('Error while retrieving the concert data. Either the location is not correctly formatted or there are no concerts in this location.');
         });
     }).catch(function (err) {
         console.log(err);
