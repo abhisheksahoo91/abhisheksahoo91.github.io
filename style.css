@@ -46,7 +46,7 @@ div#concert_group {
 div#concert_list {
     padding-left: 50px;
     padding-right: 10px;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 div#concert_selected {
@@ -131,7 +131,10 @@ hr {
 }
 
 .button {
-    # border-radius: 5px;
+    font-family: monospace;
+}
+
+span {
     font-family: monospace;
 }
 

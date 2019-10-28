@@ -3,20 +3,12 @@
 "use strict";
 
 async function playSongsByLocation() {
-    //console.log('In playSongsByLocation');
     await getLocation().then(async function (geoPoint) {
-        //console.log('Obtained Location');
-        //console.log(geoPoint);
         await getConcert(geoPoint).then(async function (concertData) {
-            //console.log('Obtained Concert');
-            //console.log(concertData);
             if (concertData != null) {
                 var eventData = concertData._embedded.events;
                 localStorage.setItem('concert_event', JSON.stringify(eventData));
-
-                // First we will display the events in the website
                 document.getElementById('player').style.display = "block";
-                // DZ.player.play();
                 displayConcert(eventData);
             } else {
                 console.log('No concert in this location');
@@ -61,7 +53,6 @@ async function getConcert(geoPoint) {
 }
 
 function displayConcert(eventData) {
-
     // Sort the events
     var sortParam = document.getElementById('sort_parameter').value.toLowerCase();
     if (sortParam == 'date') {
@@ -69,8 +60,7 @@ function displayConcert(eventData) {
     } else {
         eventData.sort((a, b) => (a.distance > b.distance) ? 1 : -1);
     }
-
-    console.log(eventData)
+    
     var parentDiv = document.getElementById('concert_list');
     parentDiv.innerHTML = '';
 
@@ -159,7 +149,6 @@ function displaySelectedConcert(selectedConcert) {
         concertImage.setAttribute('src', imageURL);
         selectedConcertDiv.appendChild(concertImage);
     }
-    
     return selectedArtistName;
 }
 
@@ -203,29 +192,10 @@ function sortEvents(sortDropdown) {
     displayConcert(eventData);
 }
 
-/*
-function myShuffle(myArray) {
-    var arrayLen = myArray.length;
-    var tempVar;
-    var myRandInt;
-    while (arrayLen) {
-        myRandInt = Math.floor(Math.random() * arrayLen);
-        arrayLen = arrayLen - 1;
-        tempVar = myArray[arrayLen];
-        myArray[arrayLen] = myArray[myRandInt];
-        myArray[myRandInt] = tempVar;
-    }
-    return myArray;
-}*/
-
 function myOnload() {
-    //document.body.scrollTop = document.documentElement.scrollTop = 0;
     function onPlayerLoaded() {
-        // console.log('Player is loaded');
         var myFavTracks = [698905582, 744266592, 447098092, 710164312, 771196602];
-        var myFavAlbum = 100856872;
         DZ.player.playTracks(myFavTracks);
-        // DZ.player.playAlbum(myFavAlbum);
         DZ.player.play();
     }
 
@@ -236,9 +206,8 @@ function myOnload() {
             container: 'player',
             cover: true,
             playlist: true,
-            // width: 650,
             height: 200,
-            // layout: "light"
+            layout: "light",
             onload: onPlayerLoaded
         }
     });
