@@ -153,7 +153,7 @@ function displaySelectedConcert(selectedConcert) {
 
 async function playSongsBasedOnArtistName(artistName, maxSize) {
     var songsList = [];
-    let baseURL = "https://cors-anywhere.herokuapp.com/http://api.deezer.com/search?";
+    let baseURL = "https://cryptic-bastion-26650.herokuapp.com/http://api.deezer.com/search?";
     let queryURL = baseURL + '&q=artist:"' + artistName + '"&order=RANKING&limit=' + maxSize + '&output=json';
     await fetch(queryURL).then(function (resp) {
         resp.json().then(function (myJson) {
