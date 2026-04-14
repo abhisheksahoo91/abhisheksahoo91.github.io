@@ -1,3 +1,3 @@
-Hello World, 
+Hello Everyone, 
 
-This is Abhishek Sahoo.
+I am Abhishek Sahoo, an Electrical Engineering PhD. My research focus is Medical Ultrasound Imaging and Signal Processing algorithm development.
